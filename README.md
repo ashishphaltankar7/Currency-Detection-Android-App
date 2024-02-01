@@ -1,100 +1,58 @@
-# Android Currency Detector App using TensorFlow Lite image classification
+# Rupee Reader
 
-## Overview
+Rupee Reader is an innovative mobile application designed to assist visually impaired individuals in identifying Indian currency notes. Leveraging TensorFlow Lite, the application utilizes machine learning models to detect and recognize various denominations of Indian currency notes. With Rupee Reader, users can receive real-time feedback on the currency notes they encounter, both in voice and text format, enabling greater independence and accessibility for visually impaired individuals.
 
-This is an example application for [TensorFlow Lite](https://tensorflow.org/lite)
-on Android. It uses
-[Image classification](https://www.tensorflow.org/lite/models/image_classification/overview)
-to continuously classify whatever it sees from the device's back camera.
-Inference is performed using the TensorFlow Lite Java API. The demo app
-classifies frames in real-time, displaying the top most probable
-classifications. It allows the user to choose between a floating point or
-[quantized](https://www.tensorflow.org/lite/performance/post_training_quantization)
-model, select the thread count, and decide whether to run on CPU, GPU, or via
-[NNAPI](https://developer.android.com/ndk/guides/neuralnetworks).
+## Features
 
-These instructions walk you through building and
-running the demo on an Android device. For an explanation of the source, see
-[TensorFlow Lite Android image classification example](https://www.tensorflow.org/lite/models/image_classification/android).
+- **Currency Detection**: Rupee Reader employs TensorFlow Lite models to accurately detect and identify Indian currency notes, including denominations ranging from ₹10 to ₹2000.
+- **Voice and Text Output**: The application provides real-time feedback on the detected currency notes in both voice and text formats, allowing users to receive information audibly or through text-to-speech conversion.
+- **User-Friendly Interface**: Rupee Reader features an intuitive and easy-to-use interface designed with accessibility in mind, making it simple for visually impaired users to navigate and interact with the application.
+- **Offline Support**: TensorFlow Lite models are integrated into the application, enabling offline usage without the need for a constant internet connection.
 
-<!-- TODO(b/124116863): Add app screenshot. -->
+## Installation
 
-### Model
-Inside Assests folder zip file is there.
+To run Rupee Reader locally, follow these steps:
 
-Resnet50 
-16 batch size
-100 epochs
-Teachable ML
+1. Clone this repository to your local machine using `git clone https://github.com/your-username/Rupee-Reader.git`
+2. Open the project in Android Studio or your preferred development environment.
+3. Build and run the project on your Android device or emulator.
 
-## Requirements
+## Usage
 
-*   Android Studio 3.2 (installed on a Linux, Mac or Windows machine)
+- Upon launching the application, users can point their device's camera at an Indian currency note.
+- Rupee Reader will analyze the image captured by the camera and provide feedback on the detected currency note, including its denomination.
+- Users can receive this information in both voice and text formats, depending on their preferences.
+- The application's user interface allows users to navigate between different features and settings easily.
 
-*   Android device in
-    [developer mode](https://developer.android.com/studio/debug/dev-options)
-    with USB debugging enabled
+## Technologies Used
 
-*   USB cable (to connect Android device to your computer)
+- Android Studio: The primary IDE used for Android app development.
+- TensorFlow Lite: TensorFlow Lite models are utilized for currency detection and recognition.
+- Text-to-Speech (TTS) Libraries: Libraries such as Android's built-in TextToSpeech API are used for converting text responses into speech.
+- Camera APIs: Android CameraX or Camera2 APIs are used for capturing images of currency notes.
+- Gradle: Dependency management and build automation for the Android project.
 
-## Build and run
+## Contributing
 
-### Step 1. Clone the TensorFlow examples source code
+Contributions to the Rupee Reader project are welcome! If you would like to contribute, please follow these steps:
 
-Clone the TensorFlow examples GitHub repository to your computer to get the demo
-application.
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/improvement`).
+3. Make your changes.
+4. Commit your changes (`git commit -am 'Add new feature'`).
+5. Push to the branch (`git push origin feature/improvement`).
+6. Create a new Pull Request.
 
-```
-https://github.com/AndroidArena/CurrencyDetectorAndroid.git
-```
+## License
 
-Open the TensorFlow source code in Android Studio. To do this, open Android
-Studio and select `Open an existing project`, setting the folder to
-`examples/lite/examples/image_classification/android`
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-<img src="images/classifydemo_img1.png?raw=true" />
+## Acknowledgements
 
-### Step 2. Build the Android Studio project
+- TensorFlow: Provides resources and tools for machine learning and deep learning.
+- Android Developer Documentation: Provides guidance and documentation for Android app development.
+- Indian Government: For providing accessible currency notes for the visually impaired.
 
-Select `Build -> Make Project` and check that the project builds successfully.
-You will need Android SDK configured in the settings. You'll need at least SDK
-version 23. The `build.gradle` file will prompt you to download any missing
-libraries.
+## Contact
 
-The file `download.gradle` directs gradle to download the two models used in the
-example, placing them into `assets`.
-
-<img src="images/classifydemo_img4.png?raw=true" style="width: 40%" />
-
-<img src="images/classifydemo_img2.png?raw=true" style="width: 60%" />
-
-<aside class="note"><b>Note:</b><p>`build.gradle` is configured to use
-TensorFlow Lite's nightly build.</p><p>If you see a build error related to
-compatibility with Tensorflow Lite's Java API (for example, `method X is
-undefined for type Interpreter`), there has likely been a backwards compatible
-change to the API. You will need to run `git pull` in the examples repo to
-obtain a version that is compatible with the nightly build.</p></aside>
-
-### Step 3. Install and run the app
-
-Connect the Android device to the computer and be sure to approve any ADB
-permission prompts that appear on your phone. Select `Run -> Run app.` Select
-the deployment target in the connected devices to the device on which the app
-will be installed. This will install the app on the device.
-
-<img src="images/classifydemo_img5.png?raw=true" style="width: 60%" />
-
-<img src="images/classifydemo_img6.png?raw=true" style="width: 70%" />
-
-<img src="images/classifydemo_img7.png?raw=true" style="width: 40%" />
-
-<img src="images/classifydemo_img8.png?raw=true" style="width: 80%" />
-
-To test the app, open the app called `TFL Classify` on your device. When you run
-the app the first time, the app will request permission to access the camera.
-Re-installing the app may require you to uninstall the previous installations.
-
-## Assets folder
-_Do not delete the assets folder content_. If you explicitly deleted the
-files, choose `Build -> Rebuild` to re-download the deleted model files into the
-assets folder.
+For any inquiries or feedback, please contact [Ashish Phaltankar](phaltankarashish7@example.com).
